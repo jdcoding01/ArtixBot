@@ -57,7 +57,10 @@ async def mute(ctx, member: discord.Member):
         await bot.say(embed=embed)
      else:
         embed=discord.Embed(title="Permission Denied.", description="You don't have permission to use this command.", color=0xff00f6)
-        await bot.say(embed=embed)                        
+        await bot.say(embed=embed)
+@bot.command()
+async def ping(ctx):
+    return await ctx.send('Pong! {0}'.format(round(bot.latency, 1))
 @bot.command()
 async def shopcmd():
     await bot.say("wiki.daily ~ daily cash rewards")
