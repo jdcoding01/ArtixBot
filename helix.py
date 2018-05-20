@@ -60,7 +60,7 @@ async def mute(ctx, member: discord.Member):
         await bot.say(embed=embed)
 @bot.command()
 async def ping(ctx):
-    await bot.say('Pong! {0}'.format(round(bot.latency, 1))
+    await bot.say('Pong! {0}'.format(round(bot.latency, 1)))
 @bot.command()
 async def shopcmd():
     await bot.say("wiki.daily ~ daily cash rewards")
