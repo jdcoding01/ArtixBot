@@ -1,1 +1,1 @@
-worker python helix.py
+worker python main.py
