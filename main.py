@@ -169,6 +169,9 @@ async def status():
             embed.add_field(name="Red Dragon :red_circle:", value=parsed[0]["UserCount"])
             embed.add_field(name="Blue Dragon :large_blue_circle:", value=parsed[1]["UserCount"])
             await bot.say(embed=embed)
+@bot.command(pass_context=True)
+async def rootrealm(ctx):
+    await bot.say('http://game.aq3d.com/api/game/ServerList')
 chronomancer_armor = {
     'chronomancer armor', 'Chronomancer armor', 'Chronomancer Armor'
 }
