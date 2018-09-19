@@ -1620,4 +1620,4 @@ async def chat(*, chat: str):
         await bot.say(random.choice(greetings))
 #token = os.environ.get("sira")
 #bot.run(f'{token}')
-bot.run('NDg4MzY3Nzc5MjM4NTEwNTky.DnbNow.FTE2gLMKD9wpsGwOemlPKFfIXno')
+
