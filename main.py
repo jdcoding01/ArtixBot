@@ -1618,6 +1618,6 @@ greetings = ["Hello", "hello","Hi", "hi", "Hey", "hey!", "Hi there!", "hey"]
 async def chat(*, chat: str):
     if chat in greetings:
         await bot.say(random.choice(greetings))
-#token = os.environ.get("sira")
-#bot.run(f'{token}')
+token = os.environ.get("sira")
+bot.run(f'{token}')
 
