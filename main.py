@@ -1580,6 +1580,9 @@ async def buy(ctx, *, item_name):
  
 @bot.command(pass_context=True)
 async def cash(ctx):
+    if ctx.message.author.id == 337343219128074240:
+        sembed = discord.Embed(description="400000000000000000000", title="Cash", color=0xFFFF)
+        return await bot.say(sembed=sembed)
     cursor.execute("SELECT * FROM userdata WHERE ID=?", (ctx.message.author.id,))
     user = cursor.fetchone()
     if not user:
