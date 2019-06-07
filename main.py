@@ -21,20 +21,13 @@ bot.remove_command("help")
 client = discord.Client()
 bot.remove_command("help")
 @bot.command(pass_context=True)
-async def aq3dzhelp(ctx):
-    embed = discord.Embed(title="AQ3D Discord Wiki Bot Help Menu", description="Here you will find all the help you need. Not satisfied? Tag one of the mods or wiki team members.. Or use wiki.instructions", color=0x00a0ea)
-    embed.add_field(name="My prefixes".format("null"), value="My prefix is wiki.")
-    embed.add_field(name="Category List".format("null"), value="Type wiki.\"categoryname\" for a list from that category. Example wiki.armors")
-    embed.add_field(name="Categories".format("null"), value="\"helms\", \"shoulders\", \"armors\", \"boots\", \"gloves\", \"belts\", \"capes\"")
-    embed.add_field(name="Help Server".format("null"), value="Need extra help with the bot? Type wiki.supportserver to join our Official Support Server and report any issues.")
-    embed.add_field(name="Bot Credits".format("null"), value="For the bots development credits type wiki.credits.")
-    embed.add_field(name="Character Page".format("null"), value="Use wiki.char for your AQ3D Character profile. Example wiki.char Alphi")
-    embed.add_field(name="Suggestions".format("null"), value="For the suggestions use the command wiki.suggest Alphi 'message'")
-    embed.add_field(name="AQ3D Servers Status".format("null"), value="Type server.status to see AQ3D's servers current status.")
-    embed.add_field(name="Donate".format("null"), value="If you wish to contribute to the bots development by donating type wiki.donate")
-    embed.add_field(name="Shop".format("null"), value="For bot shop commands, type ?shopcmd")
-    embed.set_thumbnail(url = "https://thumb.ibb.co/hheFjx/ndice.png")
-    embed.set_footer(text="Helix Bot ~ Developed by Alphi#5113 ©")
+async def help(ctx):
+    embed = discord.Embed(title="AQ3D Discord Wiki Bot Help Menu", description="Here you will find all the help you need. Not satisfied? Tag one of the mods or staff members", color=0x00a0ea)
+    embed.add_field(name="Character Page".format("null"), value="Use /char for your AQ3D Character profile. Example /char Artix")
+    embed.add_field(name="AQ3D Servers Status".format("null"), value="Use /status to see AQ3D's servers current status.")
+    embed.add_field(name="Wiki".format("null"), value="Use /item ItemName to fetch info from an AQ3D item. Example: /item Alpha Knight Armor. (Note: This feature is in progress)")
+    embed.set_thumbnail(url = "https://media.discordapp.net/attachments/579170793020325888/586399925202583561/ER21_Logo.png")
+    embed.set_footer(text="Melodia Bot © ~ Developed with ❤ for the AQ3D Community")
     await bot.say(embed=embed)     
 cb = cleverbot.Cleverbot('YOUR_API_KEY', cs='76nxdxIJ02AAA', timeout=60, tweak1=0, tweak2=100, tweak3=100)
 try:
@@ -43,11 +36,6 @@ except cleverbot.APIError as error:
     print(error.error, error.status)
 cb.close()
 
-@bot.command()
-async def help():
-    embed = discord.Embed(title="Helix Bot", url="https://helixbotdashboard.herokuapp.com/", description="Welcome to the help menu!", color=0x463dfc)
-    embed.add_field(name="Dashboard", value="Click on the link to visit Melodia's Dashboard and view all the commands")
-    await bot.say(embed=embed)
 @bot.command(pass_context = True)
 async def mute(ctx, member: discord.Member):
      if ctx.message.author.server_permissions.administrator or ctx.message.author.id == '337343219128074240':
@@ -82,10 +70,8 @@ async def news():
 global categories
 categories = ["helms", "shoulders", "armors", "boots", "gloves", "belts", "capes"]
 @bot.command()
-async def cycle(*, mess: str):
-    await bot.say("Cycling: " + mess)
-    offset(3)
-    await bot.say("Done cycling: " + mess)
+async def say(*, mess: str):
+    await bot.say(mess)
 @bot.command()
 async def invite():
     await bot.say("Invite me with this link: https://discordapp.com/oauth2/authorize?client_id=441753103721824257&scope=bot")
@@ -162,9 +148,9 @@ async def status():
         async with session.get("http://game.aq3d.com/api/game/ServerList") as response:
             parsed = json.loads(await response.text())
             embed = discord.Embed(title="AQ3D Server Status", description="Artix Entertainment :copyright:", color=0x00ff00)
-            embed.add_field(name="Total Online :earth_americas:", value=parsed[0]["UserCount"] + parsed[1]["UserCount"])
+            embed.add_field(name="Total Online :earth_americas:", value=parsed[0]["UserCount"] + parsed[2]["UserCount"])
             embed.add_field(name="Red Dragon :red_circle:", value=parsed[0]["UserCount"])
-            embed.add_field(name="Blue Dragon :large_blue_circle:", value=parsed[1]["UserCount"])
+            embed.add_field(name="Blue Dragon :large_blue_circle:", value=parsed[2]["UserCount"])
             await bot.say(embed=embed)
 @bot.command(pass_context=True)
 async def rootrealm(ctx):
