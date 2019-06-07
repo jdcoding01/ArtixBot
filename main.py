@@ -15,13 +15,13 @@ from time import sleep as offset
 startup_extensions = ["Music"]
 import requests
 from discord.ext.commands import Bot
-prefix = ["wiki.", "?", "server."]
+prefix = "/"
 bot = commands.Bot(command_prefix=prefix)
 bot.remove_command("help")
 client = discord.Client()
 bot.remove_command("help")
 @bot.command(pass_context=True)
-async def aq3dhelp(ctx):
+async def aq3dzhelp(ctx):
     embed = discord.Embed(title="AQ3D Discord Wiki Bot Help Menu", description="Here you will find all the help you need. Not satisfied? Tag one of the mods or wiki team members.. Or use wiki.instructions", color=0x00a0ea)
     embed.add_field(name="My prefixes".format("null"), value="My prefix is wiki.")
     embed.add_field(name="Category List".format("null"), value="Type wiki.\"categoryname\" for a list from that category. Example wiki.armors")
@@ -46,7 +46,7 @@ cb.close()
 @bot.command()
 async def help():
     embed = discord.Embed(title="Helix Bot", url="https://helixbotdashboard.herokuapp.com/", description="Welcome to the help menu!", color=0x463dfc)
-    embed.add_field(name="Dashboard", value="Click on the link to visit Helix Dashboard and view all the commands")
+    embed.add_field(name="Dashboard", value="Click on the link to visit Melodia's Dashboard and view all the commands")
     await bot.say(embed=embed)
 @bot.command(pass_context = True)
 async def mute(ctx, member: discord.Member):
@@ -71,7 +71,6 @@ async def shopcmd():
 @bot.command()
 async def dashboard():
     embed=discord.Embed(title="Dashboard", url="https://helixbotdashboard.herokuapp.com/", description="Click Dashboard to access HelixBot web dashboard.", color=0x463dfc)
-    embed.set_footer(text="Developed by Alphi#5113")
     await bot.say(embed=embed)
 @bot.command(pass_context=True)
 async def suggest(ctx, member : discord.Member, *, content: str):
@@ -79,9 +78,7 @@ async def suggest(ctx, member : discord.Member, *, content: str):
 @bot.command()
 async def news():
     await bot.say("https://www.aq3d.com/news")
-@bot.command()
-async def supportserver():
-    await bot.say("```Official Support Server``` " + " https://discord.gg/43hpdEY")
+
 global categories
 categories = ["helms", "shoulders", "armors", "boots", "gloves", "belts", "capes"]
 @bot.command()
@@ -761,19 +758,7 @@ async def categories():
     embed.set_image(url="https://thumb.ibb.co/hheFjx/indice.png")
     embed.add_field(name="=======", value="\"helms\", \"shoulders\", \"armors\", \"boots\", \"gloves\", \"belts\", \"capes\"")
     await bot.say(embed=embed)
-@bot.command()
-async def aq3dcredits():
-    embed = discord.Embed(title="Bot Credits", color=0x00ff00)
-    embed.add_field(name="Alphi#5113", value="Main Developer, Content Updater, Creator, Owner, KickStarter", inline=False)
-    embed.add_field(name="AQ3D Wikidot Site", value="All the info on the bot :slight_smile:", inline=False)
-    embed.add_field(name="Skylaris#5039", value="Content Updater, Bot Admin", inline=False)
-    embed.add_field(name="Kalyan1998#4551", value="Content Updater, Special Contributor, KickStarter", inline=False)
-    embed.add_field(name="Zevic#7280" , value="Content Updater", inline=False)
-    embed.add_field(name="Nathalya#6170", value="Content Updater", inline=False) 
-    await bot.say(embed=embed)
-@bot.command()
-async def donate():
-    await bot.say("PayPal Account: paypal.me/guccibreadgang, then DM Alphi#5113, thanks for the support!")
+
 @bot.command()
 async def echo(*, msg: str):
     await bot.say(msg)
@@ -1189,7 +1174,7 @@ async def char(*, char):
                    embed.add_field(name='\u200b', value="\n".join([b.text for b in badges[35*i:35*(i+1)]]))
             else:
                 embed.add_field(name="Badges", value=formatted_badges if len(badges) > 0 else "--No badges--")
-                embed.set_footer(text="Helix Bot ~ Developed by Alphi#5113 © ")
+                embed.set_footer(text="Melodia Bot ~ AdventureQuest 3D Community © ")
             await bot.say(embed=embed)
 @bot.command()
 async def badges(pass_context=True):
@@ -1198,8 +1183,7 @@ async def badges(pass_context=True):
     embed.add_field(name="Badges (Loyalty)".format("null"), value="Alpha Knight ~ Closed Beta ~ Guardian ~ Dragon Guardian ~ Pre Beta ~ Backer ~ Founder ~ Epic Founder ~ Legendary Founder ~ Determined ~")
     embed.add_field(name="Badges (Special)".format("null"), value="Undersworn T-shirt ~ Dage Collection 2018 ~ Zorbak Blue Moglin Plush Hat ~ 2018 Calendar ~ Eternal Chronomancer ~ Frostval Collector 2017 ~ Contest Swimsuit Edition 2016 ~ April Fools Day ~ Legion Pledge Scroll ~ AE 2017 Calendar ~ AQ3D Logo T-shirt ~")
     embed.add_field(name="Badges (Lore)".format("null"), value="Little Dread Bested ~ Firezilla Challenge ~ Burning Man Challenge ~ River Stone ~")
-    embed.add_field(name="Important!".format("null"), value="Type wiki.badge \"badgename\" for more details. Example: wiki.badge alpha knight")
-    embed.set_footer(text="AQ3D Wiki Bot ~ Developed by Alphi#5113 © ")   
+    embed.add_field(name="Important!".format("null"), value="Type wiki.badge \"badgename\" for more details. Example: wiki.badge alpha knight")  
     await bot.say(embed=embed)    
 alphaknight = {
     'Alpha Knight', 'Alpha knight', 'alpha knight'
