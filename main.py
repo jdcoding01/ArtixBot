@@ -1148,7 +1148,7 @@ async def char(*, char):
      
                 #await bot.say(f"{username} : {level} : {class_name} : {badges[0].text}")
             embed = discord.Embed(title=f"{char}" + " character's profile.", color=0x463dfc)
-            embed.set_thumbnail(url="https://thumb.ibb.co/mTpYvo/helix.png")
+            embed.set_thumbnail(url="https://media.discordapp.net/attachments/579170793020325888/586399925202583561/ER21_Logo.png")
             embed.set_image(url=f"https://game.aq3d.com{class_img_attr['src']}")
             embed.add_field(name="Level", value=f"{level}")
             embed.add_field(name="Class", value=f"{class_name}")
