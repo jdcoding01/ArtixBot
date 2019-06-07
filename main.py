@@ -22,7 +22,7 @@ client = discord.Client()
 bot.remove_command("help")
 @bot.command(pass_context=True)
 async def help(ctx):
-    embed = discord.Embed(title="AQ3D Discord Wiki Bot Help Menu", description="Here you will find all the help you need. Not satisfied? Tag one of the mods or staff members", color=0x00a0ea)
+    embed = discord.Embed(title="AQ3D Community ~ Melodia Bot", description="Here you will find all the help you need. Not satisfied? Tag one of the mods or staff members", color=0x00a0ea)
     embed.add_field(name="Character Page".format("null"), value="Use /char for your AQ3D Character profile. Example /char Artix")
     embed.add_field(name="AQ3D Servers Status".format("null"), value="Use /status to see AQ3D's servers current status.")
     embed.add_field(name="Wiki".format("null"), value="Use /item ItemName to fetch info from an AQ3D item. Example: /item Alpha Knight Armor. (Note: This feature is in progress)")
