@@ -151,6 +151,7 @@ async def status():
             embed.add_field(name="Total Online :earth_americas:", value=parsed[0]["UserCount"] + parsed[2]["UserCount"])
             embed.add_field(name="Red Dragon :red_circle:", value=parsed[0]["UserCount"])
             embed.add_field(name="Blue Dragon :large_blue_circle:", value=parsed[2]["UserCount"])
+            embed.set_thumbnail(url="https://media.discordapp.net/attachments/579170793020325888/586399925202583561/ER21_Logo.png")
             await bot.say(embed=embed)
 @bot.command(pass_context=True)
 async def rootrealm(ctx):
