@@ -74,7 +74,7 @@ async def say(*, mess: str):
     await bot.say(mess)
 @bot.command()
 async def invite():
-    await bot.say("Invite me with this link: https://discordapp.com/oauth2/authorize?client_id=441753103721824257&scope=bot")
+    await bot.say("Invite me with this link: https://discordapp.com/oauth2/authorize?client_id=579135470634532894&scope=bot")
 @bot.command()
 async def load(extension_name : str):
     """Loads an extension."""
